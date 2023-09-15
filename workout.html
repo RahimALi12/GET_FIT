@@ -1,0 +1,3312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="images/logo.png" rel="shortcut icon" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="darkmode.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Wᴏʀᴋᴏᴜᴛ</title>
+
+
+    <style>
+
+        .card {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            transition: 0.3s;
+            border: none;
+            border-radius: 0px;
+            width: 14.5rem;
+
+            &:hover {
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px 15px;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+
+            .card {
+                width: 270px;
+            }
+        }
+
+        .card-body {
+            background-color: #000;
+            color: #ffb700 !important;
+
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .dark-mode .card-body {
+            background-color: #333333;
+            box-shadow: #00000059 0px 1px 15px 5px;
+            color: #ffae00 !important;
+        }
+
+        .dark-mode .card {
+            box-shadow: #00000059 0px 1px 15px 5px;
+        }
+    </style>
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+    <div class="toggler"></div>
+
+
+
+
+    <script>
+        function loadGoogleTranslate() {
+            new google.translate.TranslateElement("google_element")
+        }
+    </script>
+
+
+
+    <!-- Cart Start -->
+
+
+
+
+
+
+
+
+    <div class="modal fade text-black" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 3px; box-shadow: rgb(0, 0, 0) 0px 5px 15px;">
+                <div class="modal-header" style="border-radius: 1px;">
+                    <h3 class="modal-title mx-auto" style="color: #ff9900; font-weight: 900;">Cart</h3>
+                    <button style="background: none; border: none; color: white; font-size: 1.5rem; font-weight: 900;"
+                        type="button" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <table class="show-cart table">
+
+                    </table>
+                    <div class="grand-total">Total : $<span class="total-cart"></span></div>
+                </div>
+                <div class="text-center cart">
+                    <button
+                        style="font-size: 1rem; font-weight: 900; color: #ff9900; border: 2px solid black; border-radius: 3px; width: 130px; height:30px;"
+                        type="submit">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Cart End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Login Start -->
+
+
+
+
+
+
+
+
+
+
+    <div class="modal fade text-black" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 3px; box-shadow: rgb(0, 0, 0) 0px 5px 15px;">
+                <div class="modal-header" style="border-radius: 1px;">
+                    <h3 class="modal-title mx-auto" style="color: #ff9900; font-weight: 900;">Login</h3>
+                    <button style="background: none; border: none; color: white; font-size: 1.5rem; font-weight: 900;"
+                        type="button" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+
+                    <form action="">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                                required
+                                style="background: none; border: none; border-bottom: 3px solid #000000; border-radius: 0; box-shadow: none; outline: none; color: inherit;">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control login" id="floatingPassword"
+                                placeholder="Password" required
+                                style="background: none; border: none; border-bottom: 3px solid #030303; border-radius: 0; box-shadow: none; outline: none; color: inherit;">
+                            <label for="floatingPassword">Password</label>
+                            <i class="toggle-password fa fa-fw bi bi-eye-slash-fill"></i>
+                        </div>
+
+                        <div class="text-center me-3 my-4">
+                            <div class="">
+                                <label class="">don't have an account ?</label>
+                                <strong data-toggle="modal" data-dismiss="modal" data-target="#Modal"
+                                    style="cursor: pointer; color: rgb(0, 102, 255);">Sign up</strong>
+                            </div>
+
+                        </div>
+                        <div class="text-center">
+                            <button
+                                style="font-size: 1rem; font-weight: 900; color: #ff9900; border: 2px solid black; border-radius: 3px; width: 130px; height:30px;"
+                                type="submit">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Login End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Sign-Up Start -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="modal fade text-black" id="Modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 3px; box-shadow: rgb(0, 0, 0) 0px 5px 15px;">
+                <div class="modal-header" style="border-radius: 1px;">
+                    <h3 class="modal-title mx-auto" style="color: #ff9900; font-weight: 900;">Sign Up</h3>
+                    <button style="background: none; border: none; color: white; font-size: 1.5rem; font-weight: 900;"
+                        type="button" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+
+                    <form action="">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                                required
+                                style="background: none; border: none; border-bottom: 3px solid #000000; border-radius: 0; box-shadow: none; outline: none; color: inherit;">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control login" id="floatingPassword"
+                                placeholder="Password" required
+                                style="background: none; border: none; border-bottom: 3px solid #030303; border-radius: 0; box-shadow: none; outline: none; color: inherit;">
+                            <label for="floatingPassword">Password</label>
+                            <i class="toggle-password fa fa-fw bi bi-eye-slash-fill"></i>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control login" id="floatingPassword"
+                                placeholder="Confirm Password" required
+                                style="background: none; border: none; border-bottom: 3px solid #030303; border-radius: 0; box-shadow: none; outline: none; color: inherit;">
+                            <label for="floatingPassword">Confirm Password</label>
+                            <i class="toggle-password fa fa-fw bi bi-eye-slash-fill"></i>
+                        </div>
+
+                        <div class="text-center me-3 my-4">
+                            <div class="">
+                                <label class="">already have an account ?</label>
+                                <strong data-toggle="modal" data-dismiss="modal" data-target="#myModal"
+                                    style="cursor: pointer; color: rgb(0, 102, 255);">Login</strong>
+                            </div>
+
+                        </div>
+                        <div class="text-center">
+                            <button
+                                style="font-size: 1rem; font-weight: 900; color: #ff9900; border: 2px solid black; border-radius: 3px; width: 130px; height:30px;"
+                                type="submit">Sign up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- Sign-Up Start -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Navbar Start -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+            <!-- <div class="d-md-none">
+        <div id="FullScreenOverlay" class="overlay">
+          <span class="closebtn" onclick="closeSearchHero()" title="Close Overlay"></span>
+          <div class="overlay-content">
+            <form action="">
+              <input type="text" placeholder="Search..." name="search">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+        </div>
+        <button class="openBtn" onclick="openSearchHero()"><span class="fa fa-search"></span></button>
+      </div> -->
+
+
+
+      <a class="navbar-brand d-none d-md-block" href="index.html">
+        <img src="images/Gᴇᴛ Fıᴛ.png" width="70" height="17"></a>
+
+
+      <a style="font-weight: 700; color: white;" class="navbar-brand ps-2 d-md-none" href="index.html">
+        <img src="images/Gᴇᴛ Fıᴛ.png" width="70" height="17"></a>
+
+
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="toggler-icon top-bar"></span>
+                <span class="toggler-icon middle-bar"></span>
+                <span class="toggler-icon bottom-bar"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- <form class="d-flex mx-auto ms-auto mt-3 d-none d-md-block col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6"
+          role="search">
+          <input type="search" id="search-box" placeholder="Search..." aria-label="Search">
+          <button class="search" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form> -->
+                <div class="ms-auto d-none d-lg-block">
+                    <div class="container">
+                        <ul class="navbar-nav ms-5 ps-5">
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="contact.html">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="workout.html">Workout</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="products.html">Products</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="mx-auto d-lg-none">
+                    <div class="container-fluid">
+                        <ul class="navbar-nav  d-flex flex-sm-row justify-content-between">
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="contact.html">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="workout.html">Workout</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="products.html">Products</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+
+                <ul class="library navbar-nav justify-content-center d-flex flex-row ms-auto fs-5"
+                    style="color: white; font-weight: 900; ">
+
+                    <div class="toggle-btn">
+                        <input class="toogleBtn" type="checkbox" id="checkbox">
+                        <label for="checkbox" class="bi bi-lightbulb-fill">
+                            <div class="powersign"></div>
+                        </label>
+                    </div>
+
+                    <li class="nav-item ms-2">
+                        <div class="cart-btn">
+                            <i type="button" class="" data-toggle="modal" data-target="#staticBackdrop">
+                                <i class="bi bi-cart4">
+                                    <span class="cart-quantity">0</span>
+                                </i>
+                            </i>
+                        </div>
+                    </li>
+
+
+                    <li class="nav-item ms-2">
+                        <i type="button" class="bi bi-person-fill" data-toggle="modal" data-target="#myModal"></i>
+                    </li>
+
+
+                    <li class="nav-item ms-2">
+                        <div id="google_element"></div>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Navbar End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Breadcrumb Start -->
+
+  <div class="d-flex justify-content-center mt-5">
+    <div
+      style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='darkturquoise'/%3E%3C/svg%3E&#34;);"
+      aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a class="one" href="index.html">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a class="two">Workout</a></li>
+      </ol>
+    </div>
+  </div>
+
+
+  <!-- Breadcrumb End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br>
+
+
+
+
+
+    <!-- Workout Start -->
+
+
+
+
+
+
+
+    <h1 style="text-align: center; font-weight: 900;">Wᴏʀᴋᴏᴜᴛ</h1>
+
+
+
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-auto" style="margin-top: 40px;">
+                <div class="card">
+                    <a href="#shoulder">
+                        <img class="card-img-top" src="images/workout/shoulder.png" alt="Card image cap"
+                            style="height: 153px; width: 290px;">
+                        <div class="card-body">
+                            <h4 class="card-title">Sʜᴏᴜʟᴅᴇʀ </h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-auto" style="margin-top: 40px;">
+                <div class="card">
+                    <a href="#biceps">
+                        <img class="card-img-top" src="images/workout/biceps.png" alt="Card image cap"
+                            style="height: 153px; width: 130px;">
+                        <div class="card-body">
+                            <h4 class="card-title">Bɪᴄᴇᴘs </h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-auto" style="margin-top: 40px;">
+                <div class="card">
+                    <a href="#triceps">
+                        <img class="card-img-top" src="images/workout/triceps.png" alt="Card image cap"
+                            style="height: 153px; width: 190px;">
+                        <div class="card-body">
+                            <h4 class="card-title">Tʀɪᴄᴇᴘs </h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-auto" style="margin-top: 40px;">
+                <div class="card">
+                    <a href="#chest">
+                        <img class="card-img-top" src="images/workout/chest.png" alt="Card image cap"
+                            style="height: 153px; width: 270px;">
+                        <div class="card-body">
+                            <h4 class="card-title">Cʜᴇsᴛ </h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-auto" style="margin-top: 40px;">
+                <div class="card">
+                    <a href="#back">
+                        <img class="card-img-top" src="images/workout/back.png" alt="Card image cap"
+                            style="height: 153px; width: 200px;">
+                        <div class="card-body">
+                            <h4 class="card-title">Bᴀᴄᴋ </h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-auto" style="margin-top: 40px;">
+                <div class="card">
+                    <a href="#abs">
+                        <img class="card-img-top" src="images/workout/abs.png" alt="Card image cap"
+                            style="height: 153px; width: 170px;">
+                        <div class="card-body">
+                            <h4 class="card-title">Aʙs </h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-auto" style="margin-top: 40px;">
+                <div class="card">
+                    <a href="#leg">
+                        <img class="card-img-top" src="images/workout/leg.png" alt="Card image cap"
+                            style="height: 153px; width: 130px;">
+                        <div class="card-body">
+                            <h4 class="card-title">Lᴇɢ </h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-auto" style="margin-top: 40px;">
+                <div class="card">
+                    <a href="#forearms">
+                        <img class="card-img-top" src="images/workout/forearm.png" alt="Card image cap"
+                            style="height: 153px; width: 190px;">
+                        <div class="card-body">
+                            <h4 class="card-title">Fᴏʀᴇᴀʀᴍs </h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- Workout End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Shoulder Start -->
+
+
+
+
+
+
+    <div class="container">
+        <span id="shoulder">
+            <br><br>
+            <h1 style="text-align: center; font-weight: 900;">Sʜᴏᴜʟᴅᴇʀ</h1>
+            <div class="row justify-content-center text-center">
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Dumbbell Seated Shoulder Press">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Dumbbell Seated Shoulder Press.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 50px;">Dumbbell Seated Shoulder Press</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Ez Bar Seated Close Grip Shoulder Press">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Ez Bar Seated Close Grip Shoulder Press.mp4"
+                                        type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 55px; margin-left: 10px;">Ez Bar Seated Close Grip
+                                        Shoulder Press</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Weighted Standing Shoulder Press With Plate">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Weighted Standing Shoulder Press With Plate.mp4"
+                                        type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 60px;">Weighted Standing Shoulder Press With Plate</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Standing Shoulder Press Barbell">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Standing Shoulder Press Barbell.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 55px;">Standing Shoulder Press Barbell</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </span>
+    </div>
+
+
+
+
+
+    <!-- Shoulder End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Biceps Start -->
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+        <div id="biceps">
+            <br><br>
+            <h1 style="text-align: center; font-weight: 900;">Bɪᴄᴇᴘs</h1>
+            <div class="row justify-content-center text-center">
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Cable Overhead Curl Biceps">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Cable Overhead Curl Biceps.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 50px;">Cable Overhead Curl Biceps</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Barbell Biceps Curl">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Barbell Biceps Curl.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 70px; margin-left: 34px;">Barbell Biceps Curl</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Dumbbell Curls">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Dumbbell Curls.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 70px; margin-left: 50px;">Dumbbell Curls</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Preacher Curl Dumbbells">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Preacher Curl Dumbbells.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 70px; margin-left: 11px;">Preacher Curl Dumbbells</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+    <!-- Biceps End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Triceps Start -->
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+        <div id="triceps">
+            <br><br>
+            <h1 style="text-align: center; font-weight: 900;">Tʀɪᴄᴇᴘs</h1>
+            <div class="row justify-content-center text-center">
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Barbell Lying Triceps Extension">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Barbell Lying Triceps Extension.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 59px;">Barbell Lying Triceps Extension</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Bench Triceps Dip Straight Legs">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Bench Triceps Dip Straight Legs.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 57px;">Bench Triceps Dip Straight Legs</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Dumbbell Incline Triceps Extension">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Dumbbell Incline Triceps Extension.mp4"
+                                        type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 59px;">Dumbbell Incline Triceps Extension</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Tricep Rope Extension On Crossover Machine">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Tricep Rope Extension On Crossover Machine.mp4"
+                                        type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 59px;">Tricep Rope Extension On Crossover Machine</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+    <!-- Triceps End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Chest Start -->
+
+
+
+
+
+
+    <div class="container">
+        <div id="chest">
+            <br><br>
+            <h1 style="text-align: center; font-weight: 900;">Cʜᴇsᴛ</h1>
+            <div class="row justify-content-center text-center">
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Cable Upper Chest Crossovers">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Cable Upper Chest Crossovers.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 57px;">Cable Upper Chest Crossovers</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Dumbbell Chest Press Flat">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Dumbbell Chest Press Flat.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 72px; margin-left: 3px;">Dumbbell Chest Press Flat</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Machine Chest Press Decline">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Machine Chest Press Decline.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 57px;">Machine Chest Press Decline</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Machine Chest Press Incline">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Machine Chest Press Incline.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 57px;">Machine Chest Press Incline</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+    <!-- chest End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- back Start -->
+
+
+
+
+
+
+    <div class="container">
+        <div id="back">
+            <br><br>
+            <h1 style="text-align: center; font-weight: 900;">Bᴀᴄᴋ</h1>
+            <div class="row justify-content-center text-center">
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Back Extension Machine">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Back Extension Machine.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 67px; margin-left: 15px;">Back Extension Machine</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Barbell Back Wide Shrug">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Barbell Back Wide Shrug.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 67px; margin-left: 13px;">Barbell Back Wide Shrug</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Upper Back Stretch">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Upper Back Stretch.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 70px; margin-left: 33px;">Upper Back Stretch</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Dynamic Back Stretch">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Dynamic Back Stretch.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 70px; margin-left: 21px;">Dynamic Back Stretch</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+    <!-- Back End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Abs Start -->
+
+
+
+
+
+
+    <div class="container">
+        <div id="abs">
+            <br><br>
+            <h1 style="text-align: center; font-weight: 900;">Aʙs</h1>
+            <div class="row justify-content-center text-center">
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Bench Decline Ab Crunch">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Bench Decline Ab Crunch.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 67px; margin-left: 9px;">Bench Decline Ab Crunch</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Cobra Side Ab Stretch">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Cobra Side Ab Stretch.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 67px; margin-left: 20px;">Cobra Side Ab Stretch</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Dumbbell Ab Crunch">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Dumbbell Ab Crunch.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 67px; margin-left: 25px;">Dumbbell Ab Crunch</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Over Weight Ab Crunch">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Over Weight Ab Crunch.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 67px; margin-left: 15px;">Over Weight Ab Crunch</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+    <!-- Abs End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Leg Start -->
+
+
+
+
+
+
+    <div class="container">
+        <div id="leg">
+            <br><br>
+            <h1 style="text-align: center; font-weight: 900;">Lᴇɢ</h1>
+            <div class="row justify-content-center text-center">
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Barbell Single Leg Split Squat">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Barbell Single Leg Split Squat.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 50px;">Barbell Single Leg Split Squat</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Barbell Straight Leg Deadlift">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Barbell Straight Leg Deadlift.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 55px; margin-left: 2px;">Barbell Straight Leg Deadlift
+                                    </h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Leg Press Machine">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Leg Press Machine.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 67px; margin-left: 32px;">Leg Press Machine</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Seated Leg Curl Machine">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="images/workout/Seated Leg Curl Machine.mp4" type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 67px; margin-left: 7px;">Seated Leg Curl Machine</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+    <!-- Leg End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Forearms Start -->
+
+
+
+
+
+
+    <div class="container">
+        <div id="forearms">
+            <br><br>
+            <h1 style="text-align: center; font-weight: 900;">Fᴏʀᴇᴀʀᴍs</h1>
+            <div class="row justify-content-center text-center">
+                <div class="col-auto col-lg-3 col-md-4 col-sm-6" style="margin-top: 40px;">
+                    <div class="align-items-center">
+                        <div class="maker">
+                            <a href="#Elbow Extension And Supination Pronation Forearm Stretch">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source
+                                        src="images/workout/Elbow Extension And Supination Pronation Forearm Stretch.mp4"
+                                        type="video/mp4">
+                                </video>
+                                <figcaption>
+                                    <h3 style="margin-bottom: 57px;">Elbow Extension And Supination Pronation Forearm
+                                        Stretch</h3>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Forearms End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Shoulder Discription Start -->
+
+
+
+
+
+
+
+
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Dumbbell Seated Shoulder Press">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Dumbbell Seated Shoulder Press</h1>
+                <div class="row" style="margin-top: 50px;">
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                Sit on a bench with a raised backrest. Keep your feet firmly on the ground, and keep an
+                                upright position. Brace your core and keep your back pressed against the backrest.
+                                Remember to keep your chest up and shoulders back.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                Boulders for shoulders. The dumbbell shoulder press is good for developing your shoulder
+                                muscles and increasing their mass.
+                                Improves shoulder mobility and stability.
+                                Allows you to work on any muscular imbalances.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Dumbbell Seated Shoulder Press.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+
+    <br>
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Ez Bar Seated Close Grip Shoulder Press">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Ez Bar Seated Close Grip Shoulder Press</h1>
+                <div class="row" style="margin-top: 70px;">
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-2">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Ez Bar Seated Close Grip Shoulder Press.mp4"
+                                    type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-1">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                The close-grip EZ-bar curl is an exercise targeting the biceps, particularly the long
+                                head. The main difference between this exercise and standard EZ-bar curls is that the
+                                hands are positioned closer together on the bar. It is thought that this helps build the
+                                outer biceps head and the peak.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                Extends your range of motion during the bench press.
+                                Activates more of your upper chest when compared to a wider grip.
+                                Emphasizes your triceps and anterior deltoids to a greater degree.
+                                May alleviate some shoulder or elbow discomfort in some cases.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Weighted Standing Shoulder Press With Plate">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Weighted Standing Shoulder Press With Plate</h1>
+                <div class="row" style="margin-top: 50px;">
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                The dumbbell overhead press can be done in either a sitting or standing position and
+                                with dumbbells held horizontally at the shoulders or plates. You can use this exercise
+                                in any upper body strength workout.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                It can help you increase muscle mass, improve shoulder strength and stability, increase
+                                your range of motion, and improve your posture. By using the machine safely and
+                                effectively, you can take advantage of these benefits and achieve your upper body
+                                strength goals.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Weighted Standing Shoulder Press With Plate.mp4"
+                                    type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Standing Shoulder Press Barbell">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Standing Shoulder Press Barbell</h1>
+                <div class="row" style="margin-top: 70px;">
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-2">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Standing Shoulder Press Barbell.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-1">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                Grip the bar with the hands about shoulder-width apart and the palm facing the ceiling.
+                                Dip under the bar to bring it off the rack letting it rest across the top of the
+                                shoulders so that the palms are facing the ceiling and the elbows are pointed straight
+                                ahead.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                The barbell shoulder press is a compound exercise that works the deltoids, trapezius and
+                                triceps. It also strengthens the rotator cuff, neck and core. This move is great for
+                                building muscle strength in your upper body as well as improving overall stability.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- Shoulder Description End -->
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Biceps Description Start -->
+
+
+
+
+
+
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Cable Overhead Curl Biceps">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Cable Overhead Curl Biceps</h1>
+                <div class="row" style="margin-top: 50px;">
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                The overhead cable curl is a biceps-focused exercise
+                                performed between two cable stacks, using a pair of D-handles. The arms and elbows are
+                                held
+                                at shoulder height throughout the movement, and both hands curl in toward the ears. This
+                                position is designed to eliminate shoulder involvement and momentum, while targeting the
+                                biceps peak. This movement is generally done for moderate to high reps, such as 8-12
+                                reps
+                                per set or more, as part of arm-focused training.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                Builds bigger and more defined biceps, The cable provides constant tension throughout
+                                the
+                                movement, including at peak contraction, Great way to target the biceps peak, Effective
+                                even
+                                with light weight.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Cable Overhead Curl Biceps.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+
+    <br>
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Barbell Biceps Curl">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Barbell Biceps Curl</h1>
+                <div class="row" style="margin-top: 70px;">
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-2">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Barbell Biceps Curl.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-1">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                The barbell curl can help increase overall arm and grip strength and upper body mass
+                                for
+                                strength, power, and fitness athletes. In addition, the barbell curl can be done to
+                                offer
+                                added injury resilience and performance training for lifters who may be susceptible
+                                to
+                                bicep
+                                and elbow injuries.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                The barbell curl has stood the test of time, and fills a unique role in many
+                                training
+                                programs due to the various benefits it can provide. Excellent Biceps Builder,
+                                Reinforced
+                                Elbow Flexion, Reinforced Arm Chain, Natural and Simplistic Form, Bending the
+                                Wrists,
+                                “Floating” Elbows or Upper Arms.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Dumbbell Curls">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Dumbbell Curls</h1>
+                <div class="row" style="margin-top: 50px;">
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                Dumbbell curls are an effective exercise for building muscle mass in the biceps. They
+                                can be done with heavy weights for low reps to build strength, or with lighter weights
+                                for high reps to build endurance. The exercise also improves grip strength and forearm
+                                development.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                Dumbbell curls can help you build bigger biceps.
+                                Dumbbell curls can strengthen your elbow flexion.
+                                Dumbbell curls can improve your grip strength.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Dumbbell Curls.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Preacher Curl Dumbbells">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Preacher Curl Dumbbells</h1>
+                <div class="row" style="margin-top: 70px;">
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-2">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Preacher Curl Dumbbells.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-1">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                The dumbbell preacher curl is an exercise that focuses on building the biceps,
+                                particularly the biceps peak. All you need is a pair of dumbbells and a preacher bench.
+                                It's usually performed for moderate to high reps as part of an upper-body or
+                                arms-focused workout.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                Preacher curls are an effective exercise to build strength, power, and definition in the
+                                biceps and forearm muscles. Compared to regular bicep curl exercises, the EZ bar
+                                preacher curl creates the most natural angle of movement for the elbow to help stabilize
+                                the joint while also optimizing eccentric loading capacity.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- Biceps Description End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Triceps Discription Start -->
+
+
+
+
+
+
+
+
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Barbell Lying Triceps Extension">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Barbell Lying Triceps Extension</h1>
+                <div class="row" style="margin-top: 50px;">
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                Lie down on a bench with your head close to the edge. Hold a barbell with a
+                                shoulder-wide grip, and lift it up to straight arms over yourself.
+                                Lower the barbell down behind your head.
+                                Reverse the motion and extend your arms again.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                Improved Tricep Strength. Lying tricep extensions are a great exercise for building
+                                strength in the triceps.
+                                Increased Muscle Mass.
+                                Better Definition.
+                                Improved Lockout Strength.
+                                Reduced Risk of Injury.
+                                Improved Athletic Performance.
+                                Better Posture.
+                                Increased Bone Density.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Barbell Lying Triceps Extension.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+
+    <br>
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Bench Triceps Dip Straight Legs">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Bench Triceps Dip Straight Legs</h1>
+                <div class="row" style="margin-top: 70px;">
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-2">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Bench Triceps Dip Straight Legs.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-1">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                Only your heels should be on the floor, and your legs should be straight. Keep your
+                                knees and hips bent. Your arms should be fully extended with just your palms on the
+                                bench. Bend your elbows to lower your body down until your elbows reach 90 degrees.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                Dips strengthen the muscles in your chest, shoulders, triceps.
+                                When done correctly, bench dips can add muscle mass to your upper body.
+                                Dips are an excellent exercise to increase flexibility in the shoulders and wrists, as
+                                well as gaining muscle mass in the upper body.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Dumbbell Incline Triceps Extension">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Dumbbell Incline Triceps Extension</h1>
+                <div class="row" style="margin-top: 50px;">
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                The incline dumbbell tricep extension is a variation of the lying dumbbell tricep
+                                extension that adds a slight incline to the movement. The incline used in incline
+                                dumbbell tricep extensions increases the range of motion, allowing you to get a greater
+                                stretch on the tricep at the bottom of the movement.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                Builds size and definition in the triceps.
+                                Using two dumbbells helps avoid one side taking over the movement.
+                                Great stretch and activation on all three heads of the triceps, but the long head in
+                                particular.
+                                Dumbbells can be more comfortable for the wrists and elbows than a barbell.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Dumbbell Incline Triceps Extension.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Tricep Rope Extension On Crossover Machine">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Tricep Rope Extension On Crossover Machine</h1>
+                <div class="row" style="margin-top: 70px;">
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-2">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Tricep Rope Extension On Crossover Machine.mp4"
+                                    type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-1">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                Attach the pulleys to the highest position on the crossover machine.
+                                Grasp the left cable with your right hand and the right cable with your left hand.
+                                Pull your upper arms into your sides and keep your elbows locked out.
+                                Bend your arm, squeeze your triceps and straighten your elbows.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                Depending on the pulley attachment, cable tricep extensions build grip strength as you
+                                can maintain an overhand grip or a neutral grip throughout the pulldown, activating
+                                muscles in your hands and forearms. The main benefit of the triceps extension is the
+                                hypertrophy of the triceps that comes with the motion.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- Triceps Description End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Chest Discription Start -->
+
+
+
+
+
+
+
+
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Cable Upper Chest Crossovers">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Cable Upper Chest Crossovers</h1>
+                <div class="row" style="margin-top: 50px;">
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                Cable crossovers target the pectoralis major muscles' sternal heads, found in the bottom
+                                of your chest as well as activating muscles in your shoulder and back. The standing
+                                Cable crossover exercise recruits the third most muscle fibres in your chest, only
+                                behind bench press and flyes.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                It is a great way to add muscle and define your chest and upper body.
+                                Along with the chest muscles, cable crossover benefits your arms, core, and glute
+                                muscles too.
+                                It can increase your range of motion and improve shoulder stability.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Cable Upper Chest Crossovers.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+
+    <br>
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Dumbbell Chest Press Flat">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Dumbbell Chest Press Flat</h1>
+                <div class="row" style="margin-top: 70px;">
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-2">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Dumbbell Chest Press Flat.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-1">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                The dumbbell bench press, also known as the dumbbell flat bench press and the dumbbell
+                                chest press, is an upper-body exercise that activates your arm, shoulder, and chest
+                                muscles. Perform the dumbbell bench press exercise by lying flat on your back on a
+                                bench. Grab a pair of dumbbells and hold them on your hips. While engaging your core and
+                                glutes, lift the dumbbells above your chest. Squeeze your shoulder blades as you lower
+                                them again until your upper and lower arms form a 90-degree angle.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                The hype and testosterone notwithstanding, the flat bench press has a slew of benefits:
+                                Increases lifting power. Builds overall upper body strength. Builds the major and minor
+                                pectoralis muscles at the same time.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Machine Chest Press Decline">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Machine Chest Press Decline</h1>
+                <div class="row" style="margin-top: 50px;">
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                The machine decline bench press exercise works the lower portion of the pectoral muscles
+                                and many people prefer this exercise as it offers more stability for new people to the
+                                exercise.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                The machine chest press is an effective exercise for targeting the chest muscles and
+                                will also work your triceps and front deltoid (shoulder), as other similar motion
+                                exercises will. This exercise can help to build strength and size in the chest, as well
+                                as improve posture and mobility.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Machine Chest Press Decline.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Machine Chest Press Incline">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Machine Chest Press Incline</h1>
+                <div class="row" style="margin-top: 70px;">
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-2">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Machine Chest Press Incline.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-1">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                The incline chest press machine works the upper chest muscles. These include the
+                                pectoralis major (upper chest), the anterior deltoid (front shoulder muscles), and the
+                                triceps (muscles in the back of the arms).
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                The purpose of the incline press is to focus more of the work on the upper pecs. The
+                                main benefit in performing incline presses is to develop the upper portion of the
+                                pectoral muscles. When the bench is set at an incline (15 to 30 degrees), you activate
+                                your shoulders more since it's comparable to a shoulder press.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- Chest Description End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Back Discription Start -->
+
+
+
+
+
+
+
+
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Back Extension Machine">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Back Extension Machine</h1>
+                <div class="row" style="margin-top: 50px;">
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                Back extension exercises may be used in training programs to support other more complex
+                                exercise movements. They're also extremely beneficial when used in recovery programs to
+                                help people who have back injuries or limited mobility. Back extension is also one of
+                                the most versatile isolation exercises.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                Back extension exercises improve the stability and strength of your erector spinae
+                                muscles. They also improve the range of motion of your lower back and can have a
+                                rehabilitative effect on people with poor lumbar or thoracic back posture.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Back Extension Machine.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+
+    <br>
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Barbell Back Wide Shrug">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Barbell Back Wide Shrug</h1>
+                <div class="row" style="margin-top: 70px;">
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-2">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Barbell Back Wide Shrug.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-1">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                The Barbell Shrug is a mass building compound barbell exercise that packs on serious
+                                muscle mass and strength for the traps. There are many different variations, however
+                                when it comes to gains and results, the barbell variation is hard to beat.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                Build Strength and Muscle. The exercise can be loaded heavy and work as an excellent way
+                                to stimulate hypertrophy and develop strength.
+                                Better Shoulder and Arm Mobility and Health.
+                                Reduce the Risk of Back Pain.
+                                Improve Posture.
+                                Augmented Grip Strength.
+                                Swinging the Back.
+                                Bad Head and Neck Positioning.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Upper Back Stretch">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Upper Back Stretch</h1>
+                <div class="row" style="margin-top: 50px;">
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                Lift your arm up until it is in an approx. 60 degree angle. Rest the elbow against the
+                                wall and lean forward until you feel it stretching in the breast muscle. Perform three
+                                repetitions with each arm for a duration of 30 seconds with a short break between each
+                                repetition.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                Increase overall flexibility and reduce stiffness of the joints.
+                                Increase blood circulation and get more oxygen into the muscles.
+                                Corrects your posture and prevents slouching.
+                                Decreases the risk of muscle damage and tension.
+                                Provides you peace, calmness, and relaxation.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Upper Back Stretch.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Dynamic Back Stretch">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Dynamic Back Stretch</h1>
+                <div class="row" style="margin-top: 70px;">
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-2">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Dynamic Back Stretch.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-1">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                Dynamic stretching specifies actively moving a limb through full range of motion. Since
+                                dynamic stretching incorporates controlled movement, range of motion can be increased
+                                through each repetition.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                It Can Improve Your Range Of Motion.
+                                It Can Improve Your Flexibility.
+                                It Can Improve Your Posture.
+                                It Can Improve Your Athletic Performance.
+                                It Can Reduce Your Risk Of Injury.
+                                It Can Relieve Back Pain.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- Back Description End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Abs Discription Start -->
+
+
+
+
+
+
+
+
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Bench Decline Ab Crunch">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Bench Decline Ab Crunch</h1>
+                <div class="row" style="margin-top: 50px;">
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                Decline situps increase spinal flexion and work the core muscles around the torso,
+                                thighs, and pelvis. These include the rectus abdominis, obliques, and rectus femoris.
+                                They also strengthen the back, chest, and hip flexors, which are the inner hip muscles
+                                that bring the abdomen toward the thighs as you lift.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                The variation is challenging and more beneficial than traditional ab movements because
+                                of your torso position. Doing crunches on a decline bench forces your abs to work extra
+                                hard in raising your torso, leading to more strength, stability, and athleticism.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Bench Decline Ab Crunch.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+
+    <br>
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Cobra Side Ab Stretch">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Cobra Side Ab Stretch</h1>
+                <div class="row" style="margin-top: 70px;">
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-2">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Cobra Side Ab Stretch.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-1">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                The king cobra pose is a back bending pose that is considered to be one of the best
+                                asanas to get a flat stomach and toned back. It helps in strengthening and elongating
+                                the core. This asana burns unwanted stomach fat, as it stretches abdominal muscles to
+                                make them super tight.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                Opens the shoulder blades, neck, and collar bones.
+                                Improves spinal posture, flexibility, and alignment.
+                                Reduces back pain.
+                                Improves circulation.
+                                Opens the lungs.
+                                Stimulates the abdominal and digestive organs, improving digestion.
+                                Massages and regulates the adrenal and thyroid glands.
+                                Reduces stress.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Dumbbell Ab Crunch">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Dumbbell Ab Crunch</h1>
+                <div class="row" style="margin-top: 50px;">
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                Weighted crunches are one of the most effective abs exercises you can perform in your
+                                workout routine. Crunches are a bodyweight exercise that use a smaller range of motion
+                                than a sit-up.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                The weighted crunch exercise targets a range of muscles in your core region including
+                                the external and internal obliques, rectus femoris, and rectus abdominis. The exercise
+                                also works on your lower back muscles.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Dumbbell Ab Crunch.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Over Weight Ab Crunch">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Over Weight Ab Crunch</h1>
+                <div class="row" style="margin-top: 70px;">
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-2">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Over Weight Ab Crunch.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-1">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                Weighted crunches intensify the movement and deliver a powerful core exercise by
+                                targeting muscles in your midsection such as your abdominal muscles, lower back, and
+                                obliques. To perform weighted crunches, simply hold a dumbbell, kettlebell, or medicine
+                                ball as you perform a standard crunch.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                One of the most important weighted crunches benefits is that it is an excellent strength
+                                training exercise that helps you build a strong upper body. Better muscle strength and
+                                endurance makes you more agile and give you a toned appearance.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- Abs Description End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Leg Discription Start -->
+
+
+
+
+
+
+
+
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Barbell Single Leg Split Squat">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Barbell Single Leg Split Squat</h1>
+                <div class="row" style="margin-top: 50px;">
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                The primary muscles utilized in the split squat are the quadriceps and glutes, while the
+                                hamstrings are also being activated, but to a lesser degree. By manipulating the
+                                relative angles of the torso and/or shin, muscle activity will also be influenced.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                Split squats predominantly target your quads and glutes. Because split squats focus on
+                                one leg at a time, it requires more muscle focus and increases muscle activation. This
+                                helps to increase the growth of muscles used for unilateral movements like sprinting and
+                                jumping more efficiently.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Barbell Single Leg Split Squat.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+
+    <br>
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Barbell Straight Leg Deadlift">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Barbell Straight Leg Deadlift</h1>
+                <div class="row" style="margin-top: 70px;">
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-2">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Barbell Straight Leg Deadlift.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-1">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                The barbell straight-leg deadlift builds strength in the core, hamstrings, glutes, and
+                                lower back. Correctly performing this exercise depends on mastering in the hip hinge,
+                                which requires you to push your hips back and feel a stretch in your hamstrings to start
+                                the movement.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                The major benefit of the stiff leg deadlift is its effect on your posterior chain. By
+                                strengthening it you benefit not only your posture and lower back strength, but your
+                                explosive power, jumping, leg press and incline running capability.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Leg Press Machine">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Leg Press Machine</h1>
+                <div class="row" style="margin-top: 50px;">
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                The Leg Press Machine promotes leg development by isolating the muscles that comprise
+                                the leg. This machine mainly engages the gluteal muscles, quadriceps, and hamstrings.
+                                The calves act as supporting and stabilizing muscles throughout the movement. It also
+                                engages the gastrocnemius and the adductor magnus
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                Build Lower Body Strength.
+                                Support Joint Health.
+                                Improve Balance and Stability.
+                                Enhance Muscle Definition.
+                                Strengthen the Core.
+                                Boost Athletic Performance.
+                                Increase Workout Variety.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Leg Press Machine.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Seated Leg Curl Machine">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Seated Leg Curl Machine</h1>
+                <div class="row" style="margin-top: 70px;">
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-2">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source src="images/workout/Seated Leg Curl Machine.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2 order-lg-1">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                The single-joint knee flexion (“leg curl”) is one of the most common exercises to train
+                                the hamstrings because it isolates the target muscles by using a weight machine, which
+                                stabilizes the body and prevents excessive joint movement (3,4).
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                Also known as the leg curl, the seated hamstring curl is a fantastic exercise for
+                                building size and strength in your hamstrings. Not only will this exercise increase your
+                                lower body strength, but it will help you prevent injury and improve your performance in
+                                other exercises.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- Leg Description End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Forearms Discription Start -->
+
+
+
+
+
+
+
+
+
+
+    <section class="about-section" style="padding: 10px;">
+        <div class="container">
+            <div id="Elbow Extension And Supination Pronation Forearm Stretch">
+                <br><br>
+                <h1 style="text-align: center; font-weight: 900;">Elbow Extension And Supination Pronation Forearm
+                    Stretch</h1>
+                <div class="row" style="margin-top: 50px;">
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                            </div>
+                            <div class="text">
+                                The muscles on the posterior (back) of the arm are extensors. The prime mover of elbow
+                                extension is the triceps brachii muscle, and is assisted by the much smaller anconeus
+                                muscle. All anterior (front) arm muscles cause elbow flexion. These muscles are the
+                                biceps brachii, brachialis and brachioradialis.
+                            </div><br>
+                            <h5>Benefits</h5>
+                            <div class="text">
+                                Elbow exercises aid to stretch the ligaments in the elbow to promote wrist mobility and
+                                increase flexibility. Elbow exercises help prevent elbow pain and injury: Weak elbows
+                                are more prone to fractures and sprains. Repetitive motions can cause elbow pain by
+                                placing undue stress on the muscles.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner-column wow fadeInLeft">
+                            <video autoplay muted loop playsinline preload="metadata" width="100%">
+                                <source
+                                    src="images/workout/Elbow Extension And Supination Pronation Forearm Stretch.mp4"
+                                    type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Forearms Description End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer Start -->
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="bd-footer text-light mb-2 my-5 mx-3">
+        <div class="container-fluid">
+            <div class="row justify-content-center text-md-center">
+                <div class="mb-4 text-center">
+                    <a class="d-inline-flex align-items-center mx-auto mt-3" href="index.html">
+                        <img src="images/Gᴇᴛ Fıᴛ.png" width="130" height="35">
+                      </a>
+                </div>
+                <div class="col-6 col-sm-6 col-md-3 col-lg-3 mb-3">
+                    <h4
+                        style="color: #ffa600; font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        Links</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="index.html" style="color: white; font-weight: 500;">Home</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="about.html" style="color: white; font-weight: 500;">About Us</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="contact.html" style="color: white; font-weight: 500;">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-6 col-md-3 col-lg-3 mb-3">
+                    <h4
+                        style="color: #ffa600; font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        About Us</h4>
+                    <ul class="list-unstyled" style="font-weight: 500;">
+                        <span style="color: white; font-weight: 700;">Get <span
+                                style="color: #ffa600; font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Fit</span>
+                        </span> is the best gym in Karachi is dedicated to pushing you out of your comfort zone into
+                        the
+                        ‘feel-fantastic’ zone.
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-3 mb-3">
+                    <h4
+                        style="color: #ffa600; font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        Contact Us</h4>
+                    <ul class="list-unstyled" style="font-weight: 500;">
+                        <li class="mb-3">
+                            <i style="color: #ffa600;" class="bi bi-envelope-fill"></i> <span style="cursor: pointer;">
+                                GetFIT@gmail.com</span>
+                        </li>
+                        <li class="mb-3">
+                            <i style="color: #ffa600;" class="bi bi-telephone-fill"></i> <span style="cursor: pointer;">
+                                +
+                                1234-5678-910</span>
+                        </li>
+                        <li class="mb-3">
+                            <i style="color: #EFB11A;" class="bi-geo-alt-fill"></i> <span style="cursor: pointer;">
+                                Karachi,
+                                Pakistan</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-3 mb-3">
+                    <h4
+                        style="color: #ffa600; font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        Location</h4>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.534049991726!2d67.06268877538437!3d24.98196294038503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb340e584b891c3%3A0x29b2cbc198ba2dbd!2sAptech%20Computer%20Education%20North%20Karachi%20Center!5e0!3m2!1sen!2s!4v1684909086845!5m2!1sen!2s"
+                        width="100%" height="100" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <div
+            class="footer-2 d-flex flex-column flex-sm-row px-2 text-center justify-content-between align-items-center">
+            <p>&copy; 2023 <span style="font-weight: 700;">𝗚ᴇᴛ</span> <span
+                    style="font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Fıᴛ</span>,
+                All rights reserved.</p>
+            <ul class="list-unstyled d-flex fs-5">
+                <a style="text-decoration: none; color: white;" class=" social-icon social-facebook"
+                    href="https://web.facebook.com/"><i class="fa fa-facebook"></i></a>
+                <a style="text-decoration: none; color: white;" class=" social-icon social-instagram"
+                    href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+                <a style="text-decoration: none; color: white;" class=" social-icon social-twitter"
+                    href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+                <a style="text-decoration: none; color: white;" class=" social-icon social-youtube"
+                    href="https://www.youtube.com/"><i class="fa fa-youtube-play"></i></a>
+            </ul>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Back to top Start -->
+
+
+
+
+
+
+    <button type="button" class="btn-floating btn-lg" id="btn-back-to-top" style="background: #ffa600; border: black;">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+
+
+
+
+    <!-- Back to top End -->
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="translate.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="images/logo.png" rel="shortcut icon" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="darkmode.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Sauna Suit Blue</title>
+
+
+
+
+    <style>
+        .main-wrapper {
+            min-height: 10vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        @media screen and (max-width:460px) {
+            .prdct {
+                align-items: center;
+                width: 300rem;
+                justify-content: center;
+            }
+        }
+
+        .container {
+            max-width: 1000px;
+            padding: 0 1rem;
+            margin: 0 auto;
+        }
+
+        .product-div {
+            margin: 1rem 0;
+            padding: 2rem 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            background-color: transparent;
+            border-radius: 3px;
+            column-gap: 10px;
+        }
+
+        .product-div-left {
+            padding: 20px;
+        }
+
+        .product-div-right {
+            padding: 20px;
+            color: #000;
+        }
+
+        .img-container img {
+            width: 200px;
+            margin: 0 auto;
+        }
+
+        .hover-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin-top: 32px;
+        }
+
+        .hover-container div {
+            border: 2px solid rgb(108, 244, 253);
+            padding: 1rem;
+            border-radius: 3px;
+            margin: 0 4px 8px 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .active {
+            border-color: rgb(0, 162, 255) !important;
+        }
+
+        .hover-container div img {
+            width: 50px;
+            cursor: pointer;
+        }
+
+        .product-div-right span {
+            display: block;
+        }
+
+        .product-name {
+            font-size: 3rem;
+            margin-bottom: 22px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        .product-price {
+            font-weight: 700;
+            font-size: 24px;
+            opacity: 0.9;
+            font-weight: 500;
+            color: #0c6b04;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            color: rgb(255, 145, 0);
+        }
+
+        .product-rating span {
+            margin-right: 6px;
+        }
+
+        .product-description {
+            font-weight: 18px;
+            line-height: 1.6;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 50px;
+        }
+
+        .btn-groups {
+            margin-top: 22px;
+        }
+
+        .btn-groups button {
+            display: inline-block;
+            font-size: 16px;
+            font-family: inherit;
+            text-transform: uppercase;
+            padding: 15px 16px;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-groups button .bi {
+            margin-right: 8px;
+        }
+
+        .add-cart-btn {
+            background-color: #FF9F00;
+            border: 2px solid #FF9F00;
+            margin-right: 8px;
+        }
+
+        .add-cart-btn:hover {
+            background-color: #fff;
+            color: #ff5e00;
+        }
+
+        .buy-now-btn {
+            background-color: #000;
+            border: 2px solid #000;
+        }
+
+        .buy-now-btn:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        @media screen and (max-width: 992px) {
+            .product-div {
+                grid-template-columns: 100%;
+            }
+
+            .product-div-right {
+                text-align: center;
+            }
+
+            .product-rating {
+                justify-content: center;
+            }
+
+            .product-description {
+                max-width: 400px;
+                margin-right: auto;
+                margin-left: auto;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .btn-groups button {
+                width: 70%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+    <div class="toggler"></div>
+
+
+
+
+    <script>
+        function loadGoogleTranslate() {
+            new google.translate.TranslateElement("google_element")
+        }
+    </script>
+
+
+
+    <!-- Cart Start -->
+
+
+
+
+
+
+    <div class="modal fade text-black" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 3px; box-shadow: rgb(0, 0, 0) 0px 5px 15px;">
+                <div class="modal-header" style="border-radius: 1px;">
+                    <h3 class="modal-title mx-auto" style="color: #ff9900; font-weight: 900;">Cart</h3>
+                    <button style="background: none; border: none; color: white; font-size: 1.5rem; font-weight: 900;"
+                        type="button" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <table class="show-cart table">
+
+                    </table>
+                    <div class="grand-total">Total : $<span class="total-cart"></span></div>
+                </div>
+                <div class="text-center cart">
+                    <button
+                        style="font-size: 1rem; font-weight: 900; color: #ff9900; border: 2px solid black; border-radius: 3px; width: 130px; height:30px;"
+                        type="submit">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Cart End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Login Start -->
+
+
+
+
+
+
+
+
+
+
+    <div class="modal fade text-black" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 3px; box-shadow: rgb(0, 0, 0) 0px 5px 15px;">
+                <div class="modal-header" style="border-radius: 1px;">
+                    <h3 class="modal-title mx-auto" style="color: #ff9900; font-weight: 900;">Login</h3>
+                    <button style="background: none; border: none; color: white; font-size: 1.5rem; font-weight: 900;"
+                        type="button" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+
+                    <form action="">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                                required
+                                style="background: none; border: none; border-bottom: 3px solid #000000; border-radius: 0; box-shadow: none; outline: none; color: inherit;">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control login" id="floatingPassword"
+                                placeholder="Password" required
+                                style="background: none; border: none; border-bottom: 3px solid #030303; border-radius: 0; box-shadow: none; outline: none; color: inherit;">
+                            <label for="floatingPassword">Password</label>
+                            <i class="toggle-password fa fa-fw bi bi-eye-slash-fill"></i>
+                        </div>
+
+                        <div class="text-center me-3 my-4">
+                            <div class="">
+                                <label class="">don't have an account ?</label>
+                                <strong data-toggle="modal" data-dismiss="modal" data-target="#Modal"
+                                    style="cursor: pointer; color: rgb(0, 102, 255);">Sign up</strong>
+                            </div>
+
+                        </div>
+                        <div class="text-center">
+                            <button
+                                style="font-size: 1rem; font-weight: 900; color: #ff9900; border: 2px solid black; border-radius: 3px; width: 130px; height:30px;"
+                                type="submit">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Login End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Sign-Up Start -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="modal fade text-black" id="Modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 3px; box-shadow: rgb(0, 0, 0) 0px 5px 15px;">
+                <div class="modal-header" style="border-radius: 1px;">
+                    <h3 class="modal-title mx-auto" style="color: #ff9900; font-weight: 900;">Sign Up</h3>
+                    <button style="background: none; border: none; color: white; font-size: 1.5rem; font-weight: 900;"
+                        type="button" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+
+                    <form action="">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                                required
+                                style="background: none; border: none; border-bottom: 3px solid #000000; border-radius: 0; box-shadow: none; outline: none; color: inherit;">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control login" id="floatingPassword"
+                                placeholder="Password" required
+                                style="background: none; border: none; border-bottom: 3px solid #030303; border-radius: 0; box-shadow: none; outline: none; color: inherit;">
+                            <label for="floatingPassword">Password</label>
+                            <i class="toggle-password fa fa-fw bi bi-eye-slash-fill"></i>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control login" id="floatingPassword"
+                                placeholder="Confirm Password" required
+                                style="background: none; border: none; border-bottom: 3px solid #030303; border-radius: 0; box-shadow: none; outline: none; color: inherit;">
+                            <label for="floatingPassword">Confirm Password</label>
+                            <i class="toggle-password fa fa-fw bi bi-eye-slash-fill"></i>
+                        </div>
+
+                        <div class="text-center me-3 my-4">
+                            <div class="">
+                                <label class="">already have an account ?</label>
+                                <strong data-toggle="modal" data-dismiss="modal" data-target="#myModal"
+                                    style="cursor: pointer; color: rgb(0, 102, 255);">Login</strong>
+                            </div>
+
+                        </div>
+                        <div class="text-center">
+                            <button
+                                style="font-size: 1rem; font-weight: 900; color: #ff9900; border: 2px solid black; border-radius: 3px; width: 130px; height:30px;"
+                                type="submit">Sign up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- Sign-Up Start -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Navbar Start -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+            <!-- <div class="d-md-none">
+        <div id="FullScreenOverlay" class="overlay">
+          <span class="closebtn" onclick="closeSearchHero()" title="Close Overlay"></span>
+          <div class="overlay-content">
+            <form action="">
+              <input type="text" placeholder="Search..." name="search">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+        </div>
+        <button class="openBtn" onclick="openSearchHero()"><span class="fa fa-search"></span></button>
+      </div> -->
+
+
+
+      <a class="navbar-brand d-none d-md-block" href="index.html">
+        <img src="images/Gᴇᴛ Fıᴛ.png" width="70" height="17"></a>
+
+
+      <a style="font-weight: 700; color: white;" class="navbar-brand ps-2 d-md-none" href="index.html">
+        <img src="images/Gᴇᴛ Fıᴛ.png" width="70" height="17"></a>
+
+
+
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="toggler-icon top-bar"></span>
+                <span class="toggler-icon middle-bar"></span>
+                <span class="toggler-icon bottom-bar"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- <form class="d-flex mx-auto ms-auto mt-3 d-none d-md-block col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6"
+          role="search">
+          <input type="search" id="search-box" placeholder="Search..." aria-label="Search">
+          <button class="search" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form> -->
+                <div class="ms-auto d-none d-lg-block">
+                    <div class="container">
+                        <ul class="navbar-nav ms-5 ps-5">
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="contact.html">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="workout.html">Workout</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="products.html">Products</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="mx-auto d-lg-none">
+                    <div class="container-fluid">
+                        <ul class="navbar-nav  d-flex flex-sm-row justify-content-between">
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="contact.html">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="workout.html">Workout</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="products.html">Products</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+
+                <ul class="library navbar-nav justify-content-center d-flex flex-row ms-auto fs-5"
+                    style="color: white; font-weight: 900; ">
+
+                    <div class="toggle-btn">
+                        <input class="toogleBtn" type="checkbox" id="checkbox">
+                        <label for="checkbox" class="bi bi-lightbulb-fill">
+                            <div class="powersign"></div>
+                        </label>
+                    </div>
+
+                    <li class="nav-item ms-2">
+                        <div class="cart-btn">
+                            <i type="button" class="" data-toggle="modal" data-target="#staticBackdrop">
+                                <i class="bi bi-cart4">
+                                    <span class="cart-quantity">0</span>
+                                </i>
+                            </i>
+                        </div>
+                    </li>
+
+
+                    <li class="nav-item ms-2">
+                        <i type="button" class="bi bi-person-fill" data-toggle="modal" data-target="#myModal"></i>
+                    </li>
+
+
+                    <li class="nav-item ms-2">
+                        <div id="google_element"></div>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Navbar End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- Breadcrumb Start -->
+
+  <div class="d-flex justify-content-center mt-5">
+    <div
+      style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='darkturquoise'/%3E%3C/svg%3E&#34;);"
+      aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a class="one" href="index.html">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a class="two" href="products.html">Products</a></li>
+      </ol>
+    </div>
+  </div>
+
+
+  <!-- Breadcrumb End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+    <div class="main-wrapper">
+        <div class="container">
+            <div class="product-div">
+                <div class="product-div-left">
+                    <div class="img-container">
+                        <img src="images/products/Wear/saunasuitblue.png">
+                    </div>
+                    <div class="hover-container">
+
+                        <div><img src="images/products/Wear/saunasuitblue.png"></div>
+                        <div><img src="images/products/Wear/saunasuitred_black.png"></div>
+                    </div>
+                </div>
+                <div class="product-div-right">
+                    <h1 class="product-name">Sauna Suit Blue</h1>
+                    <div class="product-rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                        <i class="bi bi-star"></i>
+                        <p style="margin-top: 13px; font-weight: 700;">(3.5)</p>
+                    </div>
+                    <p class="product-description" style="font-weight: 600;">Accelerated Weight Loss. A sauna suit traps
+                        body heat, thereby increasing perspiration.
+                        Enhanced Cardio And Oxygen Uptake. 
+                        Heat Retention In Cold Weather. 
+                        Protects And Grows Muscle Cells. 
+                        Prevents Injuries.
+                    <p class="product-price">$.32</p>
+                    <div class="btn-groups">
+                        <div class="featured-content-list">
+                            <button type="button" data-name="SaunaSuitBlue" data-price="32" class="default-btn">
+                                Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer Start -->
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="bd-footer text-light mb-2 my-5 mx-3">
+        <div class="container-fluid">
+            <div class="row justify-content-center text-md-center">
+                <div class="mb-4 text-center">
+                    <a class="d-inline-flex align-items-center mx-auto mt-3" href="index.html">
+                        <img src="images/Gᴇᴛ Fıᴛ.png" width="130" height="35">
+                      </a>
+                </div>
+                <div class="col-6 col-sm-6 col-md-3 col-lg-3 mb-3">
+                    <h4
+                        style="color: #ffa600; font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        Links</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="index.html" style="color: white; font-weight: 500;">Home</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="about.html" style="color: white; font-weight: 500;">About Us</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="contact.html" style="color: white; font-weight: 500;">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-6 col-md-3 col-lg-3 mb-3">
+                    <h4
+                        style="color: #ffa600; font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        About Us</h4>
+                    <ul class="list-unstyled" style="font-weight: 500;">
+                        <span style="color: white; font-weight: 700;">Get <span
+                                style="color: #ffa600; font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Fit</span>
+                        </span> is the best gym in Karachi is dedicated to pushing you out of your comfort zone into
+                        the
+                        ‘feel-fantastic’ zone.
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-3 mb-3">
+                    <h4
+                        style="color: #ffa600; font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        Contact Us</h4>
+                    <ul class="list-unstyled" style="font-weight: 500;">
+                        <li class="mb-3">
+                            <i style="color: #ffa600;" class="bi bi-envelope-fill"></i> <span style="cursor: pointer;">
+                                GetFIT@gmail.com</span>
+                        </li>
+                        <li class="mb-3">
+                            <i style="color: #ffa600;" class="bi bi-telephone-fill"></i> <span style="cursor: pointer;">
+                                +
+                                1234-5678-910</span>
+                        </li>
+                        <li class="mb-3">
+                            <i style="color: #EFB11A;" class="bi-geo-alt-fill"></i> <span style="cursor: pointer;">
+                                Karachi,
+                                Pakistan</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-3 mb-3">
+                    <h4
+                        style="color: #ffa600; font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        Location</h4>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.534049991726!2d67.06268877538437!3d24.98196294038503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb340e584b891c3%3A0x29b2cbc198ba2dbd!2sAptech%20Computer%20Education%20North%20Karachi%20Center!5e0!3m2!1sen!2s!4v1684909086845!5m2!1sen!2s"
+                        width="100%" height="100" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <div
+            class="footer-2 d-flex flex-column flex-sm-row px-2 text-center justify-content-between align-items-center">
+            <p>&copy; 2023 <span style="font-weight: 700;">𝗚ᴇᴛ</span> <span
+                    style="font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Fıᴛ</span>,
+                All rights reserved.</p>
+            <ul class="list-unstyled d-flex fs-5">
+                <a style="text-decoration: none; color: white;" class=" social-icon social-facebook"
+                    href="https://web.facebook.com/"><i class="fa fa-facebook"></i></a>
+                <a style="text-decoration: none; color: white;" class=" social-icon social-instagram"
+                    href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+                <a style="text-decoration: none; color: white;" class=" social-icon social-twitter"
+                    href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+                <a style="text-decoration: none; color: white;" class=" social-icon social-youtube"
+                    href="https://www.youtube.com/"><i class="fa fa-youtube-play"></i></a>
+            </ul>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Back to top Start -->
+
+
+
+
+
+
+    <button type="button" class="btn-floating btn-lg" id="btn-back-to-top" style="background: #ffa600; border: black;">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+
+
+
+
+    <!-- Back to top End -->
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="translate.js"></script>
+
+</body>
+
+</html>

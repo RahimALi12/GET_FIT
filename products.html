@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="images/logo.png" rel="shortcut icon" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="darkmode.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Pʀᴏᴅᴜᴄᴛs</title>
+
+
+
+
+    <style>
+        .card {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            transition: 0.3s;
+            border: none;
+            border-radius: 0px;
+            width: 14.5rem;
+
+            &:hover {
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px 15px;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+
+            .card {
+                width: 270px;
+            }
+        }
+
+        .card-body {
+            background-color: #000;
+            color: #ffb700 !important;
+
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .dark-mode .card-body {
+            background-color: #333333;
+            box-shadow: #00000059 0px 1px 15px 5px;
+            color: #ffae00 !important;
+        }
+
+        .dark-mode .card {
+            box-shadow: #00000059 0px 1px 15px 5px;
+        }
+
+
+        @media screen and (max-width: 575px) {
+
+            #cards_landscape_wrap-2 .card-flyer {
+                width: 15rem;
+                height: 20rem;
+            }
+        }
+
+        @media only screen and (max-width: 1200px) and (min-width: 576px) {
+
+            #cards_landscape_wrap-2 .card-flyer {
+                width: 14rem;
+                height: 20rem;
+            }
+
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+    <!-- <div class="toggler"></div> -->
+
+
+
+
+    <script>
+        function loadGoogleTranslate() {
+            new google.translate.TranslateElement("google_element")
+        }
+    </script>
+
+
+
+    <!-- Cart Start -->
+
+
+
+
+
+
+    <div class="modal fade text-black" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 3px; box-shadow: rgb(0, 0, 0) 0px 5px 15px;">
+                <div class="modal-header" style="border-radius: 1px;">
+                    <h3 class="modal-title mx-auto" style="color: #ff9900; font-weight: 900;">Cart</h3>
+                    <button style="background: none; border: none; color: white; font-size: 1.5rem; font-weight: 900;"
+                        type="button" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <table class="show-cart table">
+
+                    </table>
+                    <div class="grand-total">Total : $<span class="total-cart"></span></div>
+                </div>
+                <div class="text-center cart">
+                    <button
+                        style="font-size: 1rem; font-weight: 900; color: #ff9900; border: 2px solid black; border-radius: 3px; width: 130px; height:30px;"
+                        type="submit">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Cart End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Login Start -->
+
+
+
+
+
+
+
+
+
+
+    <div class="modal fade text-black" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 3px; box-shadow: rgb(0, 0, 0) 0px 5px 15px;">
+                <div class="modal-header" style="border-radius: 1px;">
+                    <h3 class="modal-title mx-auto" style="color: #ff9900; font-weight: 900;">Login</h3>
+                    <button style="background: none; border: none; color: white; font-size: 1.5rem; font-weight: 900;"
+                        type="button" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+
+                    <form action="">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                                required
+                                style="background: none; border: none; border-bottom: 3px solid #000000; border-radius: 0; box-shadow: none; outline: none; color: inherit;">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control login" id="floatingPassword"
+                                placeholder="Password" required
+                                style="background: none; border: none; border-bottom: 3px solid #030303; border-radius: 0; box-shadow: none; outline: none; color: inherit;">
+                            <label for="floatingPassword">Password</label>
+                            <i class="toggle-password fa fa-fw bi bi-eye-slash-fill"></i>
+                        </div>
+
+                        <div class="text-center me-3 my-4">
+                            <div class="">
+                                <label class="">don't have an account ?</label>
+                                <strong data-toggle="modal" data-dismiss="modal" data-target="#Modal"
+                                    style="cursor: pointer; color: rgb(0, 102, 255);">Sign up</strong>
+                            </div>
+
+                        </div>
+                        <div class="text-center">
+                            <button
+                                style="font-size: 1rem; font-weight: 900; color: #ff9900; border: 2px solid black; border-radius: 3px; width: 130px; height:30px;"
+                                type="submit">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Login End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Sign-Up Start -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="modal fade text-black" id="Modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 3px; box-shadow: rgb(0, 0, 0) 0px 5px 15px;">
+                <div class="modal-header" style="border-radius: 1px;">
+                    <h3 class="modal-title mx-auto" style="color: #ff9900; font-weight: 900;">Sign Up</h3>
+                    <button style="background: none; border: none; color: white; font-size: 1.5rem; font-weight: 900;"
+                        type="button" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+
+                    <form action="">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                                required
+                                style="background: none; border: none; border-bottom: 3px solid #000000; border-radius: 0; box-shadow: none; outline: none; color: inherit;">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control login" id="floatingPassword"
+                                placeholder="Password" required
+                                style="background: none; border: none; border-bottom: 3px solid #030303; border-radius: 0; box-shadow: none; outline: none; color: inherit;">
+                            <label for="floatingPassword">Password</label>
+                            <i class="toggle-password fa fa-fw bi bi-eye-slash-fill"></i>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control login" id="floatingPassword"
+                                placeholder="Confirm Password" required
+                                style="background: none; border: none; border-bottom: 3px solid #030303; border-radius: 0; box-shadow: none; outline: none; color: inherit;">
+                            <label for="floatingPassword">Confirm Password</label>
+                            <i class="toggle-password fa fa-fw bi bi-eye-slash-fill"></i>
+                        </div>
+
+                        <div class="text-center me-3 my-4">
+                            <div class="">
+                                <label class="">already have an account ?</label>
+                                <strong data-toggle="modal" data-dismiss="modal" data-target="#myModal"
+                                    style="cursor: pointer; color: rgb(0, 102, 255);">Login</strong>
+                            </div>
+
+                        </div>
+                        <div class="text-center">
+                            <button
+                                style="font-size: 1rem; font-weight: 900; color: #ff9900; border: 2px solid black; border-radius: 3px; width: 130px; height:30px;"
+                                type="submit">Sign up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- Sign-Up Start -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Navbar Start -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+            <!-- <div class="d-md-none">
+        <div id="FullScreenOverlay" class="overlay">
+          <span class="closebtn" onclick="closeSearchHero()" title="Close Overlay"></span>
+          <div class="overlay-content">
+            <form action="">
+              <input type="text" placeholder="Search..." name="search">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+        </div>
+        <button class="openBtn" onclick="openSearchHero()"><span class="fa fa-search"></span></button>
+      </div> -->
+
+
+
+      <a class="navbar-brand d-none d-md-block" href="index.html">
+        <img src="images/Gᴇᴛ Fıᴛ.png" width="70" height="17"></a>
+
+
+      <a style="font-weight: 700; color: white;" class="navbar-brand ps-2 d-md-none" href="index.html">
+        <img src="images/Gᴇᴛ Fıᴛ.png" width="70" height="17"></a>
+
+
+
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="toggler-icon top-bar"></span>
+                <span class="toggler-icon middle-bar"></span>
+                <span class="toggler-icon bottom-bar"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- <form class="d-flex mx-auto ms-auto mt-3 d-none d-md-block col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6"
+          role="search">
+          <input type="search" id="search-box" placeholder="Search..." aria-label="Search">
+          <button class="search" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form> -->
+                <div class="ms-auto d-none d-lg-block">
+                    <div class="container">
+                        <ul class="navbar-nav ms-5 ps-5">
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="contact.html">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="workout.html">Workout</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="products.html">Products</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="mx-auto d-lg-none">
+                    <div class="container-fluid">
+                        <ul class="navbar-nav  d-flex flex-sm-row justify-content-between">
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="contact.html">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="workout.html">Workout</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="home nav-link" style="color: rgb(255, 255, 255); font-weight: 500;"
+                                    href="products.html">Products</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+
+                <ul class="library navbar-nav justify-content-center d-flex flex-row ms-auto fs-5"
+                    style="color: white; font-weight: 900; ">
+
+                    <div class="toggle-btn">
+                        <input class="toogleBtn" type="checkbox" id="checkbox">
+                        <label for="checkbox" class="bi bi-lightbulb-fill">
+                            <div class="powersign"></div>
+                        </label>
+                    </div>
+
+                    <li class="nav-item ms-2">
+                        <div class="cart-btn">
+                            <i type="button" class="" data-toggle="modal" data-target="#staticBackdrop">
+                                <i class="bi bi-cart4">
+                                    <span class="cart-quantity">0</span>
+                                </i>
+                            </i>
+                        </div>
+                    </li>
+
+
+                    <li class="nav-item ms-2">
+                        <i type="button" class="bi bi-person-fill" data-toggle="modal" data-target="#myModal"></i>
+                    </li>
+
+
+                    <li class="nav-item ms-2">
+                        <div id="google_element"></div>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Navbar End -->
+
+
+
+
+
+
+
+
+
+
+    <!-- Breadcrumb Start -->
+
+    <div class="d-flex justify-content-center mt-5">
+        <div style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='darkturquoise'/%3E%3C/svg%3E&#34;);"
+            aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="one" href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a class="two">Products</a></li>
+            </ol>
+        </div>
+    </div>
+
+
+    <!-- Breadcrumb End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br>
+
+
+
+
+
+    <!-- Products Start -->
+
+
+
+
+
+
+
+    <h1 style="text-align: center; font-weight: 900;">Pʀᴏᴅᴜᴄᴛs</h1>
+
+
+
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-auto" style="margin-top: 40px;">
+                <div class="card">
+                    <a href="#Equipment">
+                        <img class="card-img-top" src="images/products/equipments/equipments.avif" alt="Card image cap"
+                            style="height: 153px; width: 270px; border-radius: 0px;">
+                        <div class="card-body">
+                            <h4 class="card-title">Eǫᴜɪᴘᴍᴇɴᴛs </h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-auto" style="margin-top: 40px;">
+                <div class="card">
+                    <a href="#Wear">
+                        <img class="card-img-top" src="images/products/Wear/Wear.jpg" alt="Card image cap"
+                            style="height: 153px; width: 270px; border-radius: 0px;">
+                        <div class="card-body">
+                            <h4 class="card-title">Wᴇᴀʀ </h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-auto" style="margin-top: 40px;">
+                <div class="card">
+                    <a href="#lifting-gears">
+                        <img class="card-img-top" src="images/products/liftinggears/liftinggears.png"
+                            alt="Card image cap" style="height: 153px; width: 190px;">
+                        <div class="card-body">
+                            <h4 class="card-title">Lɪғᴛɪɴɢ ɢᴇᴀʀs </h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-auto" style="margin-top: 40px;">
+                <div class="card">
+                    <a href="#lifting-belts">
+                        <img class="card-img-top" src="images/products/liftingbelts/liftingbelts.jpg"
+                            alt="Card image cap" style="height: 153px; width: 190px;">
+                        <div class="card-body">
+                            <h4 class="card-title">Lɪғᴛɪɴɢ ʙᴇʟᴛs </h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- Products End -->
+
+
+
+
+
+
+
+
+    <br>
+
+
+
+
+
+
+
+
+
+    <!-- Currency Toggler Start -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container-fluid text-center fs-4    ">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <nav class=" d-flex">
+
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 d-flex justify-content-end">
+                <div class="currency-toggler display-">
+                    <p>USD</p>
+                    <div class="toggler"></div>
+                    <p>PKR</p>
+                </div>
+            </div>
+            </nav>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Currency Toggler End -->
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Equipment Start -->
+
+
+
+
+
+
+
+    <div class="container">
+        <span id="Equipment">
+            <div id="cards_landscape_wrap-2">
+                <h1 style="text-align: center; font-weight: 900;">Eǫᴜɪᴘᴍᴇɴᴛs</h1>
+                <br>
+                <div class="row justify-content-center">
+                    <div class="col-auto col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <a href="foldingpedalexerciser.html"><img class="card-img-top"
+                                            src="images/products/equipments/foldingpedalexerciser.png" alt=""
+                                            style="width: 150px;" /></a>
+                                </div>
+                                <div class="text-container">
+                                    <a href="foldingpedalexerciser.html">
+                                        <h6>Folding Pedal Exerciser</h6>
+                                    </a>
+                                    <div class="amount badge btnadd">
+                                        <span class="dollar">$</span>
+                                        <span class="price">25</span>
+                                    </div>
+
+                                    <div class="featured-content-list">
+                                        <button type="button" data-name="FoldingPedalExerciser" data-price="25"
+                                            class="default-btn">
+                                            Add to cart</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <a href="lizhaoresistancebands.html"><img class="card-img-top"
+                                            src="images/products/equipments/lizhaoresistancebands.png" alt=""
+                                            style="width: 150px;" /></a>
+                                </div>
+                                <div class="text-container">
+                                    <a href="lizhaoresistancebands.html">
+                                        <h6>Lizhao Resistance Bands</h6>
+                                    </a>
+                                    <div class="amount badge btnadd">
+                                        <span class="dollar">$</span>
+                                        <span class="price">279</span>
+                                    </div>
+
+                                    <div class="featured-content-list">
+                                        <button type="button" data-name="LizhaoResistanceBands" data-price="279"
+                                            class="default-btn">
+                                            Add to cart</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div><br><br><br>
+                    <div class="col-auto col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <a href="sprikettlebell.html"><img class="card-img-top"
+                                            src="images/products/equipments/sprikettlebell.png" alt=""
+                                            style="width: 150px;" /></a>
+                                </div>
+                                <div class="text-container">
+                                    <a href="sprikettlebell.html">
+                                        <h6>Spri Kettlebell</h6>
+                                    </a>
+                                    <div class="amount badge btnadd">
+                                        <span class="dollar">$</span>
+                                        <span class="price">14</span>
+                                    </div>
+
+                                    <div class="featured-content-list">
+                                        <button type="button" data-name="SpriKettlebell" data-price="14"
+                                            class="default-btn">
+                                            Add to cart</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <a href="yes4alladjustabledumbbell.html"><img class="card-img-top"
+                                            src="images/products/equipments/yes4alladjustabledumbbell.png" alt=""
+                                            style="width: 150px;" /></a>
+                                </div>
+                                <div class="text-container">
+                                    <a href="yes4alladjustabledumbbell.html">
+                                        <h6>Yes4 All Adjustable Dumbbell</h6>
+                                    </a>
+                                    <div class="amount badge btnadd">
+                                        <span class="dollar">$</span>
+                                        <span class="price">11</span>
+                                    </div>
+
+                                    <div class="featured-content-list">
+                                        <button type="button" data-name="Yes4AllAdjustableDumbbell" data-price="11"
+                                            class="default-btn">
+                                            Add to cart</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    </span>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Equipment End -->
+
+
+
+
+
+
+
+
+
+
+    <br><br>
+
+
+
+
+
+
+    <!-- Wear Start -->
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+        <span id="Wear">
+            <div id="cards_landscape_wrap-2">
+                <h1 style="text-align: center; font-weight: 900;">Wᴇᴀʀ</h1>
+                <br>
+                <div class="row justify-content-center">
+                    <div class="col-auto col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <a href="m1SweatT-ShirtBlack.html"><img
+                                            src="images/products/Wear/m1sweatt-shirtblack.png" alt=""
+                                            style="width: 150px;" /></a>
+                                </div>
+                                <div class="text-container">
+                                    <a href="m1SweatT-ShirtBlack.html">
+                                        <h6>m1 Sweat T-Shirt Black</h6>
+                                    </a>
+                                    <div class="amount badge btnadd">
+                                        <span class="dollar">$</span>
+                                        <span class="price">5</span>
+                                    </div>
+
+                                    <div class="featured-content-list">
+                                        <button type="button" data-name="m1SweatT-ShirtBlack" data-price="5"
+                                            class="default-btn">
+                                            Add to cart</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <a href="SaunaSuitC1.html"><img src="images/products/Wear/saunasuitc1.png" alt=""
+                                            style="width: 150px;" /></a>
+                                </div>
+                                <div class="text-container">
+                                    <a href="SaunaSuitC1.html">
+                                        <h6>Sauna Suit C1</h6>
+                                    </a>
+                                    <div class="amount badge btnadd">
+                                        <span class="dollar">$</span>
+                                        <span class="price">32</span>
+                                    </div>
+
+                                    <div class="featured-content-list">
+                                        <button type="button" data-name="SaunaSuitC1" data-price="32"
+                                            class="default-btn">
+                                            Add to cart</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div><br><br><br>
+                    <div class="col-auto col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <a href="SaunaSuitPink.html"><img src="images/products/Wear/saunasuitpink.png"
+                                            alt="" style="width: 150px;" /></a>
+                                </div>
+                                <div class="text-container">
+                                    <a href="SaunaSuitPink.html">
+                                        <h6>Sauna Suit Pink</h6>
+                                    </a>
+                                    <div class="amount badge btnadd">
+                                        <span class="dollar">$</span>
+                                        <span class="price">7</span>
+                                    </div>
+
+                                    <div class="featured-content-list">
+                                        <button type="button" data-name="SaunaSuitPink" data-price="7"
+                                            class="default-btn">
+                                            Add to cart</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <a href="SaunaSuitBlue.html"><img src="images/products/Wear/saunasuitblue.png"
+                                            alt="" style="width: 150px;" /></a>
+                                </div>
+                                <div class="text-container">
+                                    <a href="SaunaSuitBlue.html">
+                                        <h6>Sauna Suit Blue</h6>
+                                    </a>
+                                    <div class="amount badge btnadd">
+                                        <span class="dollar">$</span>
+                                        <span class="price">32</span>
+                                    </div>
+
+                                    <div class="featured-content-list">
+                                        <button type="button" data-name="SaunaSuitBlue" data-price="32"
+                                            class="default-btn">
+                                            Add to cart</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    </span>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Wear End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br><br>
+
+
+
+
+
+
+    <!-- Lifting Gears Start -->
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+        <span id="lifting-gears">
+            <div id="cards_landscape_wrap-2">
+                <h1 style="text-align: center; font-weight: 900;">Lɪғᴛɪɴɢ ɢᴇᴀʀs</h1>
+                <br>
+                <div class="row justify-content-center">
+                    <div class="col-auto col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <a href="A4AnkleStrapsForCable.html"><img
+                                            src="images/products/liftinggears/a4anklestrapsforcablemachine.png" alt=""
+                                            style="width: 150px;" /></a>
+                                </div>
+                                <div class="text-container">
+                                    <a href="A4AnkleStrapsForCable.html">
+                                        <h6>A4 Ankle Straps For Cable</h6>
+                                    </a>
+                                    <div class="amount badge btnadd">
+                                        <span class="dollar">$</span>
+                                        <span class="price">17</span>
+                                    </div>
+
+                                    <div class="featured-content-list">
+                                        <button type="button" data-name="A4AnkleStrapsForCable" data-price="17"
+                                            class="default-btn">
+                                            Add to cart</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <a href="F6KaraAbsStraps.html"><img
+                                            src="images/products/liftinggears/f6karaabsstraps.png" alt=""
+                                            style="width: 150px;" /></a>
+                                </div>
+                                <div class="text-container">
+                                    <a href="F6KaraAbsStraps.html">
+                                        <h6>F6 Kara Abs Straps</h6>
+                                    </a>
+                                    <div class="amount badge btnadd">
+                                        <span class="dollar">$</span>
+                                        <span class="price">19</span>
+                                    </div>
+
+                                    <div class="featured-content-list">
+                                        <button type="button" data-name="F6KaraAbsStraps" data-price="19"
+                                            class="default-btn">
+                                            Add to cart</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div><br><br><br>
+                    <div class="col-auto col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <a href="W4WristSupportWraps.html"><img
+                                            src="images/products/liftinggears/w4wristsupportwraps.png" alt=""
+                                            style="width: 150px;" /></a>
+                                </div>
+                                <div class="text-container">
+                                    <a href="W4WristSupportWraps.html">
+                                        <h6>W4 Wrist Support Wraps</h6>
+                                    </a>
+                                    <div class="amount badge btnadd">
+                                        <span class="dollar">$</span>
+                                        <span class="price">15</span>
+                                    </div>
+
+                                    <div class="featured-content-list">
+                                        <button type="button" data-name="W4WristSupportWraps" data-price="15"
+                                            class="default-btn">
+                                            Add to cart</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <a href="W5LiftingHookStraps.html"><img
+                                            src="images/products/liftinggears/w5weightliftinghookstraps.png" alt=""
+                                            style="width: 150px;" /></a>
+                                </div>
+                                <div class="text-container">
+                                    <a href="W5LiftingHookStraps.html">
+                                        <h6>W5 Lifting Hook Straps</h6>
+                                    </a>
+                                    <div class="amount badge btnadd">
+                                        <span class="dollar">$</span>
+                                        <span class="price">28</span>
+                                    </div>
+
+                                    <div class="featured-content-list">
+                                        <button type="button" data-name="W5LiftingHookStraps" data-price="28"
+                                            class="default-btn">
+                                            Add to cart</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    </span>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Lifting Gears End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br><br>
+
+
+
+
+
+
+    <!-- Lifting Belts Start -->
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+        <span id="lifting-belts">
+            <div id="cards_landscape_wrap-2">
+                <h1 style="text-align: center; font-weight: 900;">Lɪғᴛɪɴɢ ʙᴇʟᴛs</h1>
+                <br>
+                <div class="row justify-content-center text-center">
+                    <div class="col-auto col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <a href="Rd14inchLeather.html"><img
+                                            src="images/products/liftingbelts/rd14inchleather.png" alt=""
+                                            style="width: 150px;" /></a>
+                                </div>
+                                <div class="text-container">
+                                    <a href="Rd14inchLeather.html">
+                                        <h6>Rd1 4-inch Leather</h6>
+                                    </a>
+                                    <div class="amount badge btnadd">
+                                        <span class="dollar">$</span>
+                                        <span class="price">37</span>
+                                    </div>
+
+                                    <div class="featured-content-list">
+                                        <button type="button" data-name="Rd14inchLeather" data-price="37"
+                                            class="default-btn">
+                                            Add to cart</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <a href="Rx14inchBelt.html"><img src="images/products/liftingbelts/rx14inchbelt.png"
+                                            alt="" style="width: 150px;" /></a>
+                                </div>
+                                <div class="text-container">
+                                    <a href="Rx14inchBelt.html">
+                                        <h6>Rx 14-inch Belt</h6>
+                                    </a>
+                                    <div class="amount badge btnadd">
+                                        <span class="dollar">$</span>
+                                        <span class="price">25</span>
+                                    </div>
+
+                                    <div class="featured-content-list">
+                                        <button type="button" data-name="Rx14inchBelt" data-price="25"
+                                            class="default-btn">
+                                            Add to cart</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div><br><br><br>
+                    <div class="col-auto col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <a href="T7DippingBeltWithChain.html"><img
+                                            src="images/products/liftingbelts/t7dippingbeltwithchain.png" alt=""
+                                            style="width: 150px;" /></a>
+                                </div>
+                                <div class="text-container">
+                                    <a href="T7DippingBeltWithChain.html">
+                                        <h6>T7 Dipping Belt With Chain</h6>
+                                    </a>
+                                    <div class="amount badge btnadd">
+                                        <span class="dollar">$</span>
+                                        <span class="price">33</span>
+                                    </div>
+
+                                    <div class="featured-content-list">
+                                        <button type="button" data-name="T7DippingBeltWithChain" data-price="33"
+                                            class="default-btn">
+                                            Add to cart</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <a href="X36inchNeoprene.html"><img
+                                            src="images/products/liftingbelts/x36inchneoprene.png" alt=""
+                                            style="width: 150px;" /></a>
+                                </div>
+                                <div class="text-container">
+                                    <a href="X36inchNeoprene.html">
+                                        <h6>X 36-inch Neoprene</h6>
+                                    </a>
+                                    <div class="amount badge btnadd">
+                                        <span class="dollar">$</span>
+                                        <span class="price">41</span>
+                                    </div>
+
+                                    <div class="featured-content-list">
+                                        <button type="button" data-name="X36inchNeoprene" data-price="41"
+                                            class="default-btn">
+                                            Add to cart</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    </span>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Lifting Belts End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer Start -->
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="bd-footer text-light mb-2 my-5 mx-3">
+        <div class="container-fluid">
+            <div class="row justify-content-center text-md-center">
+                <div class="mb-4 text-center">
+                    <a class="d-inline-flex align-items-center mx-auto mt-3" href="index.html">
+                        <img src="images/Gᴇᴛ Fıᴛ.png" width="130" height="35">
+                      </a>
+                </div>
+                <div class="col-6 col-sm-6 col-md-3 col-lg-3 mb-3">
+                    <h4
+                        style="color: #ffa600; font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        Links</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="index.html" style="color: white; font-weight: 500;">Home</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="about.html" style="color: white; font-weight: 500;">About Us</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="contact.html" style="color: white; font-weight: 500;">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-6 col-md-3 col-lg-3 mb-3">
+                    <h4
+                        style="color: #ffa600; font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        About Us</h4>
+                    <ul class="list-unstyled" style="font-weight: 500;">
+                        <span style="color: white; font-weight: 700;">Get <span
+                                style="color: #ffa600; font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Fit</span>
+                        </span> is the best gym in Karachi is dedicated to pushing you out of your comfort zone into
+                        the
+                        ‘feel-fantastic’ zone.
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-3 mb-3">
+                    <h4
+                        style="color: #ffa600; font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        Contact Us</h4>
+                    <ul class="list-unstyled" style="font-weight: 500;">
+                        <li class="mb-3">
+                            <i style="color: #ffa600;" class="bi bi-envelope-fill"></i> <span style="cursor: pointer;">
+                                GetFIT@gmail.com</span>
+                        </li>
+                        <li class="mb-3">
+                            <i style="color: #ffa600;" class="bi bi-telephone-fill"></i> <span style="cursor: pointer;">
+                                +
+                                1234-5678-910</span>
+                        </li>
+                        <li class="mb-3">
+                            <i style="color: #EFB11A;" class="bi-geo-alt-fill"></i> <span style="cursor: pointer;">
+                                Karachi,
+                                Pakistan</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-3 mb-3">
+                    <h4
+                        style="color: #ffa600; font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                        Location</h4>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.534049991726!2d67.06268877538437!3d24.98196294038503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb340e584b891c3%3A0x29b2cbc198ba2dbd!2sAptech%20Computer%20Education%20North%20Karachi%20Center!5e0!3m2!1sen!2s!4v1684909086845!5m2!1sen!2s"
+                        width="100%" height="100" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <div
+            class="footer-2 d-flex flex-column flex-sm-row px-2 text-center justify-content-between align-items-center">
+            <p>&copy; 2023 <span style="font-weight: 700;">𝗚ᴇᴛ</span> <span
+                    style="font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Fıᴛ</span>,
+                All rights reserved.</p>
+            <ul class="list-unstyled d-flex fs-5">
+                <a style="text-decoration: none; color: white;" class=" social-icon social-facebook"
+                    href="https://web.facebook.com/"><i class="fa fa-facebook"></i></a>
+                <a style="text-decoration: none; color: white;" class=" social-icon social-instagram"
+                    href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+                <a style="text-decoration: none; color: white;" class=" social-icon social-twitter"
+                    href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+                <a style="text-decoration: none; color: white;" class=" social-icon social-youtube"
+                    href="https://www.youtube.com/"><i class="fa fa-youtube-play"></i></a>
+            </ul>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Back to top Start -->
+
+
+
+
+
+
+    <button type="button" class="btn-floating btn-lg" id="btn-back-to-top" style="background: #ffa600; border: black;">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+
+
+
+
+    <!-- Back to top End -->
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="translate.js"></script>
+
+</body>
+
+</html>
